@@ -42,18 +42,20 @@ What this is **supposed** to do:
     * One of these was I2C and the other one was SPI if i'm not mistaken... should have probably tracked down this code
       closer to when I wrote it.
 * If a letter is submitted, print a receipt and remind the user to collect it. It was fun learning to format thermal paper receipts through CUPS `lp`-- of course at that point we still had 8 whole hours left on the clock. I think there was still a bug that prevented a couple of the files from printing properly that I never managed to track down.
-    * Maybe we ended up using [escpos](https//github.com/python-escpos/python-escpos) instead?
+    * Maybe we ended up using [escpos](https://github.com/python-escpos/python-escpos) instead?
 
 Everything else was probably like, systemd, alsamixer/omxplayer, etc. etc.
 
 ### What's missing
 
 Code: 
-    * Honestly the main loop is probably pretty close to the final version but you can see some typos in there
-    * adc_infrared.py
-    * accel_code.py
+
+* Honestly the main loop is probably pretty close to the final version but you can see some typos in there
+* adc_infrared.py
+* accel_code.py
 
 Other:
+
 * There was a systemd unit file but that's pretty trivial 
 * I think I hacked in an audio player script too
 * We had a bunch of ambience tracks
