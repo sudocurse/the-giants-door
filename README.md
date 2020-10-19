@@ -8,7 +8,7 @@ Here's the code for a project called The Giant's Door. (Unfortunately until I ca
 
 # Project Notes
 
-Submitted for the [2018 Red Bull Creation build competition](https://makezine.com/2018/07/03/red-bull-creation-returns-high-five-machine-9-crazy-contraptions/), this code was written in 72 hours along with the project that it was supposed to power: a large door exploring the concept of human love. The user would be invited to knock on the door. From behind the door, a voice known as the Giant prompted the user to submit a form of a time they experienced love. They'd receive a receipt that contained another submission.
+Submitted for the [2018 Red Bull Creation build competition](https://makezine.com/2018/07/03/red-bull-creation-returns-high-five-machine-9-crazy-contraptions/), this code was written in 72 hours along with the project that it powered: a large door exploring the concept of human love. The user would be invited to knock on the door. From behind the door, a voice known as the Giant prompted the user to submit a form of a time they experienced love. They'd receive a receipt that contained another submission.
 
 Project consisted of:
 * a large door which we outfitted with a knocker and a mailbox
@@ -20,7 +20,7 @@ Project consisted of:
 * an infrared sensor to detect letters falling through the mailbox
 
 
-Some sample submissions we received (we received these during a test run, and used them as candidates for what would be printer on the receipts for future submissions):
+Some sample submissions we received (we received these during a test run, and used them as candidates for what would be printed on the receipts for future submissions):
 * ![Submission 1](receipt/IMG_20180632_214502_974.jpg)
 * ![Submission 2](receipt/IMG_20180630_214521_717.jpg)
 * ![Submission 3](receipt/IMG_20180630_214550_784.jpg)
@@ -32,7 +32,7 @@ Some sample submissions we received (we received these during a test run, and us
 
 # Technical Notes
 
-As you'll notice in the code, it's heavily broken right now. I started running out of time gluing everything together and the welders on my team were telling me they were ready for the gadgets. So I slapped the code onto the pi and started editing straight from there so we could tune the sensors off the Pi without having to wait for deploy. Hopefully that SD card is still out there...
+As you'll notice in the code, it's heavily broken right now. I started running out of time gluing everything together and the welders on my team were telling me they were ready for the gadgets. So I slapped the code onto the pi and started editing straight from there so we could tune the sensors off the Pi without having to wait for deploy. Hopefully that SD card is still out there, but for now I just have this partial snapshot of the project before it was finished.
 
 What this is **supposed** to do:
 * powers_out.py runs the main loop. Triggers some random audio every now and then if nothing's playing ("bored" tracks)
@@ -42,6 +42,7 @@ What this is **supposed** to do:
     * One of these was I2C and the other one was SPI if i'm not mistaken... should have probably tracked down this code
       closer to when I wrote it.
 * If a letter is submitted, print a receipt and remind the user to collect it. It was fun learning to format thermal paper receipts through CUPS `lp`-- of course at that point we still had 8 whole hours left on the clock. I think there was still a bug that prevented a couple of the files from printing properly that I never managed to track down.
+    * Maybe we ended up using [escpos](https//github.com/python-escpos/python-escpos) instead?
 
 Everything else was probably like, systemd, alsamixer/omxplayer, etc. etc.
 
