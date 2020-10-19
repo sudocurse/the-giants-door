@@ -39,6 +39,18 @@ What this is **supposed** to do:
 
 Everything else was probably like, systemd, alsamixer/omxplayer, etc. etc.
 
+### What's missing
+
+Code: 
+    * Honestly the main loop is probably pretty close to the final version but you can see some typos in there
+    * adc_infrared.py
+    * accel_code.py
+
+Other:
+* There was a systemd unit file but that's pretty trivial 
+* I think I hacked in an audio player script too
+* We had a bunch of ambience tracks
+
 # Personal Notes
 
 This was probably one of the coolest opportunities to create something I've ever been paid to do. The hosts were obviously instrumental in creating the high pressure environment and putting the teams together. I'm also deeply grateful to my team for concepting and building this wonderful thing, and humbled by the rest of the participants for voting us as "People's Choice"; there's no great praise than being the favored project among a bunch of other creators. (I think we won a sailing trip because of this too ;)
