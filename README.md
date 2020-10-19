@@ -1,5 +1,6 @@
-Here's the code for a project called The Giant's Door. (Unfortunately until I can recover the raspberry pi from wherever
-it is, I probably won't be able to find the final version of the code.)
+Here's the code for a project called The Giant's Door. (Unfortunately until I can recover the raspberry pi from wherever it is, I probably won't be able to find the final version of the code.)
+
+# Project Notes
 
 Submitted for the [2018 Red Bull Creation build competition](https://makezine.com/2018/07/03/red-bull-creation-returns-high-five-machine-9-crazy-contraptions/), this code was written in 72 hours along with the project that it was supposed to power: a large door exploring the concept of human love. The user would be invited to knock on the door. From behind the door, a voice known as the Giant prompted the user to submit a form of a time they experienced love. They'd receive a receipt that contained another submission.
 
@@ -13,8 +14,7 @@ Project consisted of:
 * an infrared sensor to detect letters falling through the mailbox
 
 
-Some sample submissions we received (we received these during a test run, and used them as candidates for what would be
-printer on the receipts for future submissions):
+Some sample submissions we received (we received these during a test run, and used them as candidates for what would be printer on the receipts for future submissions):
 * ![Submission 1](receipt/IMG_20180632_214502_974.jpg)
 * ![Submission 2](receipt/IMG_20180630_214521_717.jpg)
 * ![Submission 3](receipt/IMG_20180630_214550_784.jpg)
@@ -24,3 +24,21 @@ printer on the receipts for future submissions):
 
 ----
 
+# Technical Notes
+
+As you'll notice in the code, it's heavily broken right now. I started running out of time gluing everything together and the welders on my team were telling me they were ready for the gadgets. So I slapped the code onto the pi and started editing straight from there so we could tune the sensors off the Pi without having to wait for deploy. Hopefully that SD card is still out there...
+
+What this is **supposed** to do:
+* powers_out.py runs the main loop. Triggers some random audio every now and then if nothing's playing ("bored" tracks)
+* Poll for a knock or a letter.
+    * Knocks were read from the accelerometer (hardcoded magic number yeeee) to trigger the intro prompt
+    * Letters in the mailbox were read via the infrared sensor by way of an ADC board.
+    * One of these was I2C and the other one was SPI if i'm not mistaken... should have probably tracked down this code
+      closer to when I wrote it.
+* If a letter is submitted, print a receipt and remind the user to collect it. It was fun learning to format thermal paper receipts through CUPS `lp`-- of course at that point we still had 8 whole hours left on the clock. I think there was still a bug that prevented a couple of the files from printing properly that I never managed to track down.
+
+Everything else was probably like, systemd, alsamixer/omxplayer, etc. etc.
+
+# Personal Notes
+
+This was probably one of the coolest opportunities to create something I've ever been paid to do. The hosts were obviously instrumental in creating the high pressure environment and putting the teams together. I'm also deeply grateful to my team for concepting and building this wonderful thing, and humbled by the rest of the participants for voting us as "People's Choice"; there's no great praise than being the favored project among a bunch of other creators. (I think we won a sailing trip because of this too ;)
