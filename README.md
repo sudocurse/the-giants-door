@@ -60,6 +60,8 @@ Other:
 * I think I hacked in an audio player script too
 * We had a bunch of ambience tracks
 
+Finally I found an arduino ino file lying around that may or may not have been used in the final demo.
+
 # Personal Notes
 
 This was probably one of the coolest opportunities to create something I've ever been paid to do. The hosts were obviously instrumental in creating the high pressure environment and putting the teams together. I'm also deeply grateful to my team (a talented crew consisting of me and some extremely talented welders and a very resourceful tinkerer) for concepting and building this wonderful thing, and humbled by the rest of the participants for voting us as "People's Choice"; there's no great praise than being the favored project among a bunch of other creators. (I think we won a sailing trip because of this too ;)
